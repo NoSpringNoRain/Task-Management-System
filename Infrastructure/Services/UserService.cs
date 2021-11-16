@@ -46,6 +46,7 @@ namespace Infrastructure.Services
                     Title = task.Title,
                     Description = task.Description,
                     DueDate = task.DueDate.GetValueOrDefault(),
+                    Priority = task.Priority.GetValueOrDefault(),
                     Remarks = task.Remarks
                 };
                 userTaskResponseModel.Tasks.Add(taskResponseModel);

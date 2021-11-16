@@ -1,0 +1,51 @@
+<div class="container">
+    <h2 class="my-2">Tasks To Complete</h2>
+    <p>Tasks Count: {{tasks.totalTasksCount}}</p>  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks.tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.dueDate | date}}</td>
+                <td>{{task.priority}}</td>
+                <td>{{task.remarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 class="my-2">Tasks Completed</h2>
+    <p>Tasks Count: {{tasksHistory.totalTasksHistoryCount}}</p>  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Completed Date</th>
+                <th scope="col">Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let taskHistory of tasksHistory.tasksHistory">
+                <td>{{taskHistory.taskId}}</td>
+                <td>{{taskHistory.title}}</td>
+                <td>{{taskHistory.description}}</td>
+                <td>{{taskHistory.dueDate | date}}</td>
+                <td>{{taskHistory.completed | date}}</td>
+                <td>{{taskHistory.remarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
