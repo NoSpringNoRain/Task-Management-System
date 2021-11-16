@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj": {}
+  },
+  "projects": {
+    "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj",
+        "projectName": "ApplicationCore",
+        "projectPath": "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj",
+        "packagesPath": "/Users/mtsong/.nuget/packages/",
+        "outputPath": "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mtsong/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
