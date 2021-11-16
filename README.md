@@ -1,4 +1,4 @@
-# TaskManagemengSystem
+# Task Managemeng System
 
 A client needs an application to manage its day to day tasks. Application must be developed with technologies Angular, .Net Core Web API, Entity Framework Core, SQL Server Database. Clients needs the following operations in the application.
 
