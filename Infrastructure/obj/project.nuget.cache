@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CVKRGVo2kLO7W26AU3fphLcUS7UwF/MUnGz39DSxwu5zr5eGQO3UTK1piH81pDDbv16geMVrlM4tNcVb58SeKA==",
+  "dgSpecHash": "gRD0a2tXLcTdASXLIVGRQQLy99oaRoOHSfQVqWVeLw2V1WSHC3gHpx0JRhFg3bIUloVHLG0UZVKGi/m9hMhpbA==",
   "success": true,
   "projectFilePath": "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [

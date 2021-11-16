@@ -1507,6 +1507,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        }
       }
     }
   },
@@ -5702,10 +5712,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../ApplicationCore/ApplicationCore.csproj",
+      "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ApplicationCore >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.12"
     ]
@@ -5738,7 +5754,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj": {
+              "projectPath": "/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/ApplicationCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

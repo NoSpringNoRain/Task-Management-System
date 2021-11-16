@@ -1,0 +1,12 @@
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/bin/Debug/net5.0/ApplicationCore.deps.json
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/bin/Debug/net5.0/ApplicationCore.dll
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/bin/Debug/net5.0/ref/ApplicationCore.dll
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/bin/Debug/net5.0/ApplicationCore.pdb
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.csproj.AssemblyReference.cache
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.AssemblyInfoInputs.cache
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.AssemblyInfo.cs
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.csproj.CoreCompileInputs.cache
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.dll
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ref/ApplicationCore.dll
+/Users/mtsong/Projects/DotNet/MengtingSong.TaskManager/ApplicationCore/obj/Debug/net5.0/ApplicationCore.pdb
