@@ -1,15 +1,13 @@
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.RepositoryInterfaces
+namespace ApplicationCore.ServiceInterfaces
 {
-    public interface IAsyncRepository<T> where T : class
+    public interface IEfService<T> where T : class
     {
         Task<IEnumerable<T>> GetAll();
         Task<T> Add(T entity);
         Task<T> Update(T entity);
-        Task Delete(T entity);
+        Task<T> Delete(T entity);
     }
 }

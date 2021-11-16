@@ -5,9 +5,8 @@ using ApplicationCore.Models;
 
 namespace ApplicationCore.ServiceInterfaces
 {
-    public interface IUserService
+    public interface IUserService : IEfService<UserResponseModel>
     {
-        Task<IEnumerable<UserResponseModel>> GetAllUsers();
         Task<UserTaskResponseModel> GetAllTasksForUser(int userId);
         Task<UserTaskHistoryResponseModel> GetAllTasksHistoryForUser(int userId);
     }

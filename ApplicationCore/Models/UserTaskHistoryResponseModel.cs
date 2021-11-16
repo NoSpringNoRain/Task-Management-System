@@ -7,14 +7,14 @@ namespace ApplicationCore.Models
     {
         public UserTaskHistoryResponseModel()
         {
-            TasksHistory = new List<TaskHistoryResponseModel>();
+            TasksHistory = new List<UserTaskHistoryModel>();
         }
 
         public int TotalTasksHistoryCount { get; set; }
-        public List<TaskHistoryResponseModel> TasksHistory { get; set; }
+        public List<UserTaskHistoryModel> TasksHistory { get; set; }
     }
     
-    public class TaskHistoryResponseModel
+    public class UserTaskHistoryModel
     {
         public int TaskId { get; set; }
         public string Title { get; set; }

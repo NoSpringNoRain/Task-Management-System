@@ -7,14 +7,14 @@ namespace ApplicationCore.Models
     {
         public UserTaskResponseModel()
         {
-            Tasks = new List<TaskResposneModel>();
+            Tasks = new List<UserTaskModel>();
         }
 
         public int TotalTasksCount { get; set; }
-        public List<TaskResposneModel> Tasks { get; set; }
+        public List<UserTaskModel> Tasks { get; set; }
     }
     
-    public class TaskResposneModel
+    public class UserTaskModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

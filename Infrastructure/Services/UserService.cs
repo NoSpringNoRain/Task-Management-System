@@ -16,7 +16,7 @@ namespace Infrastructure.Services
             _userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<UserResponseModel>> GetAllUsers()
+        public async Task<IEnumerable<UserResponseModel>> GetAll()
         {
             var users = await _userRepository.GetAll();
             var userList = new List<UserResponseModel>();
@@ -40,7 +40,7 @@ namespace Infrastructure.Services
             var userTaskResponseModel = new UserTaskResponseModel();
             foreach (var task in tasks)
             {
-                var taskResponseModel = new TaskResposneModel
+                var taskResponseModel = new UserTaskModel
                 {
                     Id = task.Id,
                     Title = task.Title,
@@ -62,7 +62,7 @@ namespace Infrastructure.Services
             var userTasksHistoryResponseModel = new UserTaskHistoryResponseModel();
             foreach (var taskHistory in tasksHistory)
             {
-                var taskHistoryResponseModel = new TaskHistoryResponseModel
+                var taskHistoryResponseModel = new UserTaskHistoryModel
                 {
                     TaskId = taskHistory.TaskId,
                     Title = taskHistory.Title,
@@ -77,6 +77,21 @@ namespace Infrastructure.Services
             userTasksHistoryResponseModel.TotalTasksHistoryCount = userTasksHistoryResponseModel.TasksHistory.Count();
             
             return userTasksHistoryResponseModel;
+        }
+
+        public async Task<UserResponseModel> Add(UserResponseModel entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<UserResponseModel> Update(UserResponseModel entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<UserResponseModel> Delete(UserResponseModel entity)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

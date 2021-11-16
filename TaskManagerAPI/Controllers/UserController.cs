@@ -25,7 +25,7 @@ namespace TaskManagerAPI.Controllers
         // https://localhost/api/users
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await _userService.GetAllUsers();
+            var users = await _userService.GetAll();
             if (!users.Any()) return NotFound("No users round");
             return Ok(users);
         }
