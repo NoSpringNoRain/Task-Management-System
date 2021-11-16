@@ -38,8 +38,6 @@ namespace TaskManagerAPI
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddHttpContextAccessor();
-            
             services.AddDbContext<TaskManagerDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("TaskManagerDbConnection")));
             
