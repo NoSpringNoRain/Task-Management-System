@@ -1,30 +1,88 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApplicationCore.Entities;
+using ApplicationCore.Models;
+using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
+using Task = System.Threading.Tasks.Task;
 
 namespace Infrastructure.Services
 {
     public class TaskHistoryService : ITaskHistoryService
     {
-        public async Task<IEnumerable<TaskHistory>> GetAll()
+        private readonly ITaskHistoryRepository _taskHistoryRepository;
+
+        public TaskHistoryService(ITaskHistoryRepository taskHistoryRepository)
         {
-            throw new System.NotImplementedException();
+            _taskHistoryRepository = taskHistoryRepository;
         }
 
-        public async Task<TaskHistory> Add(TaskHistory entity)
+        public async Task<IEnumerable<TaskHistoryResponseModel>> GetAll()
         {
-            throw new System.NotImplementedException();
+            var tasksHistory = await _taskHistoryRepository.GetAll();
+            var taskHistoryResponseModels = new List<TaskHistoryResponseModel>();
+
+            foreach (var taskHistory in tasksHistory)
+            {
+                var taskHistoryResponseModel = new TaskHistoryResponseModel
+                {
+                    TaskId = taskHistory.TaskId,
+                    UserId = taskHistory.UserId,
+                    Title = taskHistory.Title,
+                    Description = taskHistory.Description,
+                    DueDate = taskHistory.DueDate,
+                    Completed = taskHistory.Completed,
+                    Remarks = taskHistory.Remarks
+                };
+                taskHistoryResponseModels.Add(taskHistoryResponseModel);
+            }
+
+            return taskHistoryResponseModels;
         }
 
-        public async Task<TaskHistory> Update(TaskHistory entity)
+        public async Task<bool> Add(TaskHistoryRequestModel taskHistoryRequestModel)
         {
-            throw new System.NotImplementedException();
+            var taskHistory = new TaskHistory
+            {
+                UserId = taskHistoryRequestModel.UserId,
+                Title = taskHistoryRequestModel.Title,
+                Description = taskHistoryRequestModel.Description,
+                DueDate = taskHistoryRequestModel.DueDate,
+                Completed = taskHistoryRequestModel.Completed,
+                Remarks = taskHistoryRequestModel.Remarks
+            };
+            await _taskHistoryRepository.Add(taskHistory);
+            return true;
         }
 
-        public async Task<TaskHistory> Delete(TaskHistory entity)
+        public async Task<bool> Update(TaskHistoryRequestModel taskHistoryRequestModel)
         {
-            throw new System.NotImplementedException();
+            var taskHistory = new TaskHistory
+            {
+                UserId = taskHistoryRequestModel.UserId,
+                Title = taskHistoryRequestModel.Title,
+                Description = taskHistoryRequestModel.Description,
+                DueDate = taskHistoryRequestModel.DueDate,
+                Completed = taskHistoryRequestModel.Completed,
+                Remarks = taskHistoryRequestModel.Remarks
+            };
+            await _taskHistoryRepository.Update(taskHistory);
+            return true;
+        }
+
+        public async Task<bool> Delete(TaskHistoryRequestModel taskHistoryRequestModel)
+        {
+            var taskHistory = new TaskHistory
+            {
+                UserId = taskHistoryRequestModel.UserId,
+                Title = taskHistoryRequestModel.Title,
+                Description = taskHistoryRequestModel.Description,
+                DueDate = taskHistoryRequestModel.DueDate,
+                Completed = taskHistoryRequestModel.Completed,
+                Remarks = taskHistoryRequestModel.Remarks
+            };
+            await _taskHistoryRepository.Delete(taskHistory);
+            return true;
         }
     }
 }

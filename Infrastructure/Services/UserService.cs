@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.Entities;
 using ApplicationCore.Models;
 using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
+using Task = System.Threading.Tasks.Task;
 
 namespace Infrastructure.Services
 {
@@ -80,19 +82,43 @@ namespace Infrastructure.Services
             return userTasksHistoryResponseModel;
         }
 
-        public async Task<UserResponseModel> Add(UserResponseModel entity)
+        public async Task<bool> Add(UserRequestModel userRequestModel)
         {
-            throw new System.NotImplementedException();
+            var user = new User
+            {
+                Email = userRequestModel.Email,
+                Password = userRequestModel.Password,
+                Fullname = userRequestModel.Fullname,
+                Mobileno = userRequestModel.Mobile
+            };
+            await _userRepository.Add(user);
+            return true;
         }
 
-        public async Task<UserResponseModel> Update(UserResponseModel entity)
+        public async Task<bool> Update(UserRequestModel userRequestModel)
         {
-            throw new System.NotImplementedException();
+            var user = new User
+            {
+                Email = userRequestModel.Email,
+                Password = userRequestModel.Password,
+                Fullname = userRequestModel.Fullname,
+                Mobileno = userRequestModel.Mobile
+            };
+            await _userRepository.Update(user);
+            return true;
         }
 
-        public async Task<UserResponseModel> Delete(UserResponseModel entity)
+        public async Task<bool> Delete(UserRequestModel userRequestModel)
         {
-            throw new System.NotImplementedException();
+            var user = new User
+            {
+                Email = userRequestModel.Email,
+                Password = userRequestModel.Password,
+                Fullname = userRequestModel.Fullname,
+                Mobileno = userRequestModel.Mobile
+            };
+            await _userRepository.Delete(user);
+            return true;
         }
     }
 }

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/core/models/user';
-import { TasksHistory } from 'src/app/core/models/taskhistory';
-import { Tasks } from 'src/app/core/models/task';
+import { UserTasksHistory } from 'src/app/core/models/usertaskhistory';
+import { UserTasks } from 'src/app/core/models/usertask';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +17,11 @@ export class UserService {
     return this.http.get<User[]>(`${environment.appBaseUrl}users`);
   }
 
-  getAllTasksForUser(id: number): Observable<Tasks> {
-    return this.http.get<Tasks>(`${environment.appBaseUrl}users/${id}/tasks`)
+  getAllTasksForUser(id: number): Observable<UserTasks> {
+    return this.http.get<UserTasks>(`${environment.appBaseUrl}users/${id}/tasks`)
   }
 
-  getAllTasksHistoryForUser(id: number): Observable<TasksHistory> {
-    return this.http.get<TasksHistory>(`${environment.appBaseUrl}users/${id}/taskshistory`)
+  getAllTasksHistoryForUser(id: number): Observable<UserTasksHistory> {
+    return this.http.get<UserTasksHistory>(`${environment.appBaseUrl}users/${id}/taskshistory`)
   }
 }

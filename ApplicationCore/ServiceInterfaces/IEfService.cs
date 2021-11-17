@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.ServiceInterfaces
 {
-    public interface IEfService<T> where T : class
+    public interface IEfService<T, U> where T : class where U : class
     {
         Task<IEnumerable<T>> GetAll();
-        Task<T> Add(T entity);
-        Task<T> Update(T entity);
-        Task<T> Delete(T entity);
+        Task<bool> Add(U entity);
+        Task<bool> Update(U entity);
+        Task<bool> Delete(U entity);
     }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Tasks } from 'src/app/core/models/task';
-import { TasksHistory } from 'src/app/core/models/taskhistory';
+import { UserTasks } from 'src/app/core/models/usertask';
+import { UserTasksHistory } from 'src/app/core/models/usertaskhistory';
 import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
@@ -12,8 +12,8 @@ import { UserService } from 'src/app/core/services/user.service';
 export class TaskListComponent implements OnInit {
 
   id: number = 0;
-  tasks!: Tasks;
-  tasksHistory!: TasksHistory
+  tasks!: UserTasks;
+  tasksHistory!: UserTasksHistory
 
   constructor(private activatedRouter: ActivatedRoute, private userService: UserService) { }
 
