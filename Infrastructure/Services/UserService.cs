@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,10 +13,14 @@ namespace Infrastructure.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly ITaskRepository _taskRepository;
+        private readonly ITaskHistoryRepository _taskHistoryRepository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, ITaskRepository taskRepository, ITaskHistoryRepository taskHistoryRepository)
         {
             _userRepository = userRepository;
+            _taskRepository = taskRepository;
+            _taskHistoryRepository = taskHistoryRepository;
         }
 
         public async Task<IEnumerable<UserResponseModel>> GetAll()
@@ -108,16 +113,30 @@ namespace Infrastructure.Services
             return true;
         }
 
-        public async Task<bool> Delete(UserRequestModel userRequestModel)
+        public async Task<bool> Delete(int id)
         {
-            var user = new User
-            {
-                Email = userRequestModel.Email,
-                Password = userRequestModel.Password,
-                Fullname = userRequestModel.Fullname,
-                Mobileno = userRequestModel.Mobile
-            };
+            var user = await _userRepository.GetById(id);
+            if (user is null) return false;
             await _userRepository.Delete(user);
+            return true;
+        }
+        
+        public async Task<bool> CompleteTask(int taskId)
+        {
+            var task = await _taskRepository.GetById(taskId);
+            if (task is null) return false;
+            var taskHistory = new TaskHistory
+            {
+                TaskId = task.Id,
+                UserId = task.UserId.GetValueOrDefault(),
+                Title = task.Title,
+                Description = task.Description,
+                DueDate = task.DueDate,
+                Completed = DateTime.UtcNow,
+                Remarks = task.Remarks
+            };
+            await _taskHistoryRepository.Add(taskHistory);
+            await _taskRepository.Delete(task);
             return true;
         }
     }

@@ -9,5 +9,6 @@ namespace ApplicationCore.ServiceInterfaces
     {
         Task<UserTaskResponseModel> GetAllTasksForUser(int userId);
         Task<UserTaskHistoryResponseModel> GetAllTasksHistoryForUser(int userId);
+        Task<bool> CompleteTask(int taskId);
     }
 }

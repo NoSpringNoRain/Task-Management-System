@@ -70,17 +70,10 @@ namespace Infrastructure.Services
             return true;
         }
 
-        public async Task<bool> Delete(TaskHistoryRequestModel taskHistoryRequestModel)
+        public async Task<bool> Delete(int id)
         {
-            var taskHistory = new TaskHistory
-            {
-                UserId = taskHistoryRequestModel.UserId,
-                Title = taskHistoryRequestModel.Title,
-                Description = taskHistoryRequestModel.Description,
-                DueDate = taskHistoryRequestModel.DueDate,
-                Completed = taskHistoryRequestModel.Completed,
-                Remarks = taskHistoryRequestModel.Remarks
-            };
+            var taskHistory = await _taskHistoryRepository.GetById(id);
+            if (taskHistory is null) return false;
             await _taskHistoryRepository.Delete(taskHistory);
             return true;
         }

@@ -70,17 +70,10 @@ namespace Infrastructure.Services
             return true;
         }
 
-        public async Task<bool> Delete(TaskRequestModel taskRequestModel)
+        public async Task<bool> Delete(int id)
         {
-            var task = new Task
-            {
-                UserId = taskRequestModel.UserId,
-                Title = taskRequestModel.Title,
-                Description = taskRequestModel.Description,
-                DueDate = taskRequestModel.DueDate,
-                Priority = taskRequestModel.Priority,
-                Remarks = taskRequestModel.Remarks
-            };
+            var task = await _taskRepository.GetById(id);
+            if (task is null) return false;
             await _taskRepository.Delete(task);
             return true;
         }

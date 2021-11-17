@@ -8,6 +8,6 @@ namespace ApplicationCore.ServiceInterfaces
         Task<IEnumerable<T>> GetAll();
         Task<bool> Add(U entity);
         Task<bool> Update(U entity);
-        Task<bool> Delete(U entity);
+        Task<bool> Delete(int id);
     }
 }
