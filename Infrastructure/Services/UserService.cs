@@ -132,7 +132,7 @@ namespace Infrastructure.Services
                 Title = task.Title,
                 Description = task.Description,
                 DueDate = task.DueDate,
-                Completed = DateTime.UtcNow,
+                Completed = DateTime.Now,
                 Remarks = task.Remarks
             };
             await _taskHistoryRepository.Add(taskHistory);

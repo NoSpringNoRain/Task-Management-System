@@ -10,6 +10,7 @@
                 <th scope="col">Due Date</th>
                 <th scope="col">Priority</th>
                 <th scope="col">Remarks</th>
+                <th scope="col">Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                 <td>{{task.dueDate | date}}</td>
                 <td>{{task.priority}}</td>
                 <td>{{task.remarks}}</td>
+                <td><a class="btn btn-sm btn-outline-success">Complete</a></td>
             </tr>
         </tbody>
     </table>
